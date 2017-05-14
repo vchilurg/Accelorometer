@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cgv.accelorometer.MainActivity">
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Zval"
+        android:layout_marginLeft="119dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="48dp"
+        android:text="Values in Degree" />
+
+    <TextView
+        android:id="@+id/Xdeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:text="X:"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp" />
+
+    <TextView
+        android:id="@+id/Ydeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:text="Y:"
+        android:layout_below="@+id/Xdeg"
+        android:layout_alignRight="@+id/Xdeg"
+        android:layout_alignEnd="@+id/Xdeg" />
+
+    <TextView
+        android:id="@+id/Zdeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="Z:"
+        android:layout_below="@+id/Ydeg"
+        android:layout_alignLeft="@+id/Ydeg"
+        android:layout_alignStart="@+id/Ydeg" />
+
+</RelativeLayout>
