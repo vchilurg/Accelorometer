@@ -12,10 +12,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     Sensor A;
     SensorManager AM;
-    TextView X1,Y1,Z1;
+    TextView X1,Y1,Z1, FI;
     Float x,y,z;
     double x1=0,y1=0,z1=0, g=0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         X1 = (TextView)findViewById(R.id.Xdeg);
         Y1 = (TextView)findViewById(R.id.Ydeg);
         Z1 = (TextView)findViewById(R.id.Zdeg);
+        FI = (TextView)findViewById(R.id.Front_I);
     }
 
     @Override
@@ -48,9 +48,25 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         int Zi = (int) Math.round(Math.toDegrees(Math.acos(z1)));
 
 
-        X1.setText("X: " +Xi);
-        Y1.setText("Y: " +Yi);
-        Z1.setText("Z: " +Zi);
+        X1.setText("X: "+Xi+" °");
+        Y1.setText("Y: " +Yi+" °");
+        Z1.setText("Z: " +Zi+" °");
+
+        if(Xi>20 && Zi<70)
+        {FI.setText("Robot is inclined Downwards");
+        }
+        else if(Yi<75 && Xi>15) {
+            FI.setText("Robot is inclined Right");
+        }
+        else if(Yi>110 && Xi>20) {
+            FI.setText("Robot is inclined Left");
+        }
+        else if(Zi>110 && Xi>20) {
+            FI.setText("Robot is inclined Upwards");
+        }
+        else {
+            FI.setText("Uninclined");
+        }
 
     }
 
@@ -59,5 +75,3 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 }
-
-
